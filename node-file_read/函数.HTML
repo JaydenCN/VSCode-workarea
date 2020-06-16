@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //参数可以有默认值，传值的话会覆盖，多余的参数会存进 ...args
+    function show(a, b = 4, c = 3, ...args) {
+      alert(a);
+      alert(b);
+      alert(c);
+      alert(args);
+    }
+    show(1, 5, 6, 8, 9, 10);
+    // 合并数组
+    let a1 = [1, 2];
+    let a2 = [3, 4];
+    let a3 = [...a1, ...a2];
+    console.log(a3);
+
+    //解析数组
+    function showDow(...args) {
+      addAll(...args);
+    }
+    function addAll(a, b) {
+      console.log(a + b);
+    }
+    let a = showDow(1, 3);
+  </script>
+</html>

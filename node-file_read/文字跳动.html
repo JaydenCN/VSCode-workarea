@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="Header1_HeaderTitle">范浩杰你真帅，宇宙第一帅！</h1>
+  </body>
+  <script>
+    let txtAnim = {
+      len: 0,
+      txtDom: "",
+      arrTxt: [],
+      init: function (obj) {
+        //获取和清空字符串
+        this.obj = obj;
+        this.txtDom = obj.innerHTML.replace(/\s+/g, ""); //获取去掉空格后的字符串
+        this.len = this.txtDom.length;
+        obj.innerHTML = ""; //置空
+        this.addDom();
+      },
+      addDom: function () {
+        //遍历字符串并切割
+        for (let i = 0; i < this.len; i++) {
+          let spanDom = document.createElement("span");
+          spanDom.innerHTML = this.txtDom.slice(i, i + 1);
+          this.obj.appendChild(spanDom);
+          this.arrTxt.push(spanDom);
+        }
+        for (let i = 0; i < this.len; i++) {
+          this.arrTxt[i].style.position = "relative";
+        }
+        this.start();
+      },
+      start: function () {
+        for (let i = 0; i < this.len; i++) {
+          this.arrTxt[i].onmouseover = function () {
+            this.stop = 0;
+            this.speed = -1;
+            let $this = this;
+            this.timer = setInterval(function () {
+              $this.stop += $this.speed;
+              if ($this.stop <= -20) {
+                $this.speed = 1;
+              }
+              $this.style.top = $this.stop + "px";
+              if ($this.stop >= 0) {
+                clearInterval($this.timer);
+                $this.style.top = 0 + "px";
+              }
+            }, 15);
+          };
+        }
+      },
+    };
+
+    let txtDom = document.getElementById("Header1_HeaderTitle");
+    txtAnim.init(txtDom);
+  </script>
+</html>

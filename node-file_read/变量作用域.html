@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <title>变量作用域的重要性</title>
+  </head>
+  <body>
+    <input type="button" value="按钮1" />
+    <input type="button" value="按钮2" />
+    <input type="button" value="按钮3" />
+  </body>
+  <script>
+    var btn = document.getElementsByTagName("input");
+    console.log(btn);
+    // var  每次点击都是循环的最后一个值 之前循环的变量被系统回收，只保存了最后一个变量
+    //     使用闭包解决
+    //      什么是闭包？（相当于产生了循环数量个数的函数，不会被覆盖）
+    //     1.函数嵌套函数
+    //     2.内层函数访问调用外层函数变量或参数(将参数或者变量长期保存在内存中)
+    for (var i = 0; i < btn.length; i++) {
+      ((i) => {
+        btn[i].onclick = () => {
+          alert(i);
+        };
+      })(i);
+    }
+    // 使用let 无需解决
+    // for (let i = 0; i < btn.length; i++) {
+    //   btn[i].onclick = () => {
+    //     alert(i);
+    //   };
+    // }
+  </script>
+</html>

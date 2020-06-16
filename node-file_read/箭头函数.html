@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>箭头函数</title>
+  </head>
+  <body></body>
+  <script>
+    function show() {}
+    () => {};
+    //一个参数可以省略（） 一个返回值可以省略{}
+    let abc = (a) => a * 2;
+    alert(abc(2));
+    let arr = [2, 55, 66, 24, 68, 99, 41, 15, 26];
+    arr.sort((n1, n2) => {
+      return n2 - n1; //大到小 反之 小到大
+    });
+    alert(arr);
+  </script>
+</html>
