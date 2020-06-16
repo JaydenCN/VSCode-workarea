@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js" charset="utf-8"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" charset="utf-8"></script>
+    <script src="./browser.js" charset="utf-8"></script>
+    <script type="text/babel">
+      class Text extends React.Component {
+        constructor(...args) {
+          super(...args);
+        }
+        render() {
+          return <span>你好呀</span>;
+        }
+      }
+
+      window.onload = function () {
+        let divc = document.getElementById("div_s");
+        ReactDOM.render(<Text></Text>, divc);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="div_s"></div>
+  </body>
+</html>

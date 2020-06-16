@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script src="./jquery.js"></script>
+  <script>
+    //generator 生成器函数，可暂停代码执行
+    function* show() {
+      alert("a");
+      let a = yield 12;
+      alert(a);
+      return "ok"; // 这里return的值会给yield
+    }
+    // yield是干嘛的？
+    // yield相当于把show()拆分成了两个小函数，next()一下走一下
+    let gen = show();
+    // 踹一脚走一步
+
+    //生成器这里可以传参数，也可以返回参数
+    //注意：第一次传的参数是没用的，没法给yield传参，第一次通过函数传实参即可
+    let yield1 = gen.next(12);
+    console.log(yield1); //{value: 12, done: false}  value：yield返回值 done （函数是否执行完毕）
+    //第二次传的参数会被这一步接受到
+    let yield2 = gen.next(99);
+    console.log(yield2); //{value: "ok", done: true}
+    //     function *炒菜(菜市场买回来的){-
+    //     洗菜->洗好的菜~
+    //     let 干净的菜=yield 洗好的菜;
+    //     干净的菜->切->丝
+    //     let 切好的菜= yield 丝;
+    //     切好的菜->炒- >熟的菜-
+    //     return 熟的菜
+    // }-
+  </script>
+</html>

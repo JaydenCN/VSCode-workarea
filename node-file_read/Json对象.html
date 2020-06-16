@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let str = { name: "吴倩", sex: "女" };
+    let overStr = "http://jayden.store?xxx=" + encodeURIComponent(JSON.stringify(str));
+
+    // 字符串转Json对象其中的属性，属性值必须由双引号标记
+    let strJson = '{"GODDESS":"吴倩","sex":"女","age":24}';
+    let JsonStr = JSON.parse(strJson);
+    console.log(JsonStr);
+  </script>
+</html>

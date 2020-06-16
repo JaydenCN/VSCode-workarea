@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="./yield_xxxx.js"></script>
+  <body></body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    runner(function* () {
+      let data1 = yield axios.get("./hello.txt");
+      if (data1.data != "") {
+        let data2 = yield axios.get("./hello2.txt");
+        console.log(data2);
+      } else {
+        let data3 = yield axios.get("./hello3.txt");
+        console.log(data3);
+      }
+      console.log(data1);
+    });
+  </script>
+</html>

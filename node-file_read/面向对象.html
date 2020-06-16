@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //声明一个类
+    class User {
+      // 构造器类似Java的有参构造
+      constructor(name, sex) {
+        this.name = name;
+        this.sex = sex;
+      }
+      showName() {
+        console.log(this.name);
+      }
+      showSex() {
+        console.log(this.sex);
+      }
+    }
+    // var ontclass = new User("范浩杰", "男");
+    // ontclass.showName();
+    // ontclass.showSex();
+
+    //继承类
+    class VipUser extends User {
+      constructor(name, sex, level) {
+        super(name, sex);
+        this.level = level;
+      }
+      showLevel() {
+        console.log(this.level);
+      }
+    }
+    var ontclass = new VipUser("吴倩", "女", "我媳妇");
+    ontclass.showSex();
+    ontclass.showName();
+    ontclass.showLevel();
+  </script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组</title>
+  </head>
+  <body></body>
+  <script>
+    // Map;  映射
+    let arr = [59, 60, 65, 80, 95, 57];
+    let arrA = arr.map((item) => item * 2);
+    let arrB = arr.map((item) => (item >= 60 ? "及格" : "不及格"));
+    console.log(arrA);
+    console.log(arrB);
+    // reduce; 汇总
+    let reduceA = [26, 28, 54, 64];
+    //求和
+    //tmp : 初始为 reduceA[0],后续作为与后一位相加后的值存放媒介, item 本次要相加的数, index ：初始 1
+    // let reduceOver = reduceA.reduce(function (tmp, item, index) {
+    //   return tmp + item; //加到没有为止返回总数
+    // });
+    //求平均数
+    let reduceOver = reduceA.reduce((tmp, item, index) => (index == reduceA.length - 1 ? tmp + item : (tmp + item) / reduceA.length));
+    console.log(reduceOver);
+    // filter; 过滤器  //满足返回，不满足走开
+    let reduceC = [26, 28, 21, 54, 64, 33];
+    let reduceCc = reduceC.filter((item) => item % 3 == 0);
+    console.log(reduceCc);
+    // foreach; 循环（迭代）
+    let forEE = [22, 55, 99];
+    forEE.forEach((item, index) => {
+      console.log(index + ":" + item);
+    });
+    // ES7 includes 检查数组是否有22
+    alert(forEE.includes(22));
+    // Es7 entries()循环输出数组的下标和值
+    for (let [key, values] of forEE.entries()) {
+      alert(values);
+    }
+    // Es7 keys() 返回下标
+    for (let key of forEE.keys()) {
+      alert(key);
+    }
+  </script>
+</html>

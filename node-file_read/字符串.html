@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>字符串</title>
+  </head>
+  <body></body>
+  <script>
+    // startsWith 判断是不是以某个字符开头
+    let str = "http://www.jayden.store";
+    if (str.startsWith("http")) {
+      console.log("普通网址");
+    } else if (str.startsWith("https")) {
+      console.log("加密网址");
+    }
+    //endsWith 判断是不是以某个字符结尾
+    let endStr = "goddess.png";
+    if (endStr.endsWith(".png")) {
+      console.log("这是一张图片");
+    } else if (endStr.endsWith(".txt")) {
+      console.log("这是一个文本");
+    }
+
+    // 字符串模板 ` 反单引号
+    const name = "范浩杰";
+    let StrModule = `我${name}是最帅的`; //` 反单引号 使用${}可以嵌入变量
+    console.log(StrModule);
+  </script>
+</html>

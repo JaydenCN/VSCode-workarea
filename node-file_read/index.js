@@ -54,7 +54,7 @@ f.then((res) => {
 }).catch((err) => {
   console.log(err);
 });
-
+// 几乎等同于generator 只是把他的*-》async 把yield-》await
 async function ReandList() {
   var ftp = await reFile("hello.txt");
   var f2 = await reFile(ftp + ".txt");
